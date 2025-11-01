@@ -16,7 +16,6 @@ class User(models.Model):
     def check_password(self, raw: str) -> bool:
         return check_password(raw, self.password_hash)
 
-    # 👇 добавь вот это
     @property
     def is_authenticated(self) -> bool:
         return True
@@ -27,3 +26,4 @@ class User(models.Model):
 
     def __str__(self):
         return self.email
+
